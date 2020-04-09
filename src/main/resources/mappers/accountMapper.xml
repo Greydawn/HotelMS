@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greydawn.myssm.dao.IAccountdao">
+    <resultMap id="BaseResultMap" type="com.greydawn.hotelms.domain.Account">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="money" jdbcType="DOUBLE" property="money" />
+    </resultMap>
+
+    <select id="findById" parameterType="java.lang.Integer" resultType="com.greydawn.hotelms.domain.Account">
+    select id, name, money
+    from account
+    where id = #{id}
+  </select>
+
+</mapper>
